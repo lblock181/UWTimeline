@@ -1,0 +1,549 @@
+@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap);
+@font-face {
+  font-family: 'League-Gothic';
+  src: url('LeagueGothic-Regular.otf');
+}
+:root {
+  /* Primary Colors */
+  --primary-blue: #00518f;
+  --primary-blue-rgba: rgba(16, 22, 127, 0.5);
+  --primary-red: #ff443b;
+  --primary-yellow: #ffb351;
+  --primary-orange: #f57814;
+  --dark-grey: #505050;
+  --light-grey: #969696;
+  /* Secondary Colors */
+  --secondary-blue: #539ed0;
+  /* State Changes */
+  --primary-blue-statechange: #074578;
+  --primary-red-statechange: #d33d35;
+  --primary-yellow-statechange: #e8a44c;
+  --primary-orange-statechange: #f26527;
+}
+/* General CSS */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', Arial, sans-serif;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  /* color: white; */
+  color: black;
+  letter-spacing: .18em;
+}
+
+/* Header & Nav Bar CSS */
+a {
+  text-decoration: none;
+  color: black;
+}
+ul, li {
+  list-style-type: none;
+}
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.l-left {
+  float: left;
+}
+
+.l-right {
+  float: right;
+}
+.logoA {
+  max-width: 14%;
+}
+#mainLogo {
+  width: 50%;
+}
+.pgTitle {
+  position: relative;
+  bottom: 7.8em;
+}
+.end {
+  /* margin-top: 30px; */
+  margin-top: 3rem;
+  font-size: 3em;
+  font-weight: bold;
+  opacity: 0;
+  -webkit-transform: translateY(300px);
+          transform: translateY(300px);
+  transition: opacity, -webkit-transform 1s;
+  transition: opacity, transform 1s;
+  transition: opacity, transform 1s, -webkit-transform 1s;
+  transition-delay: 1s;
+}
+.header-top {
+  background-color: var(--primary-blue);
+  /* background-color: var(--dark-grey); */
+  height: 7rem;
+  padding: 0 1rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 12;
+  box-sizing: border-box;
+}
+
+h1 {
+  line-height: 7rem;
+  height: 7rem;
+  font-size: 4rem;
+  font-family: 'League-Gothic';
+  text-transform: uppercase;
+  color: white;
+  display: block;
+  padding: 0 1rem;
+}
+/* h1 a {
+  font-family: 'League-Gothic';
+  text-transform: uppercase;
+  color: white;
+  display: block; */
+  /* padding: 0 10px; */
+  /* padding: 0 1rem;
+} */
+/* h1 a:hover {
+  color: var(--primary-yellow);
+} */
+
+/* menu hamburger icon */
+.toggle-menu {
+  width: 5rem;
+  height: 5rem;
+  /* width: 50px;
+  height: 50px; */
+  display: inline-block;
+  position: relative;
+  top: 1rem;
+  /* top: 10px; */
+}
+.toggle-menu i {
+  position: absolute;
+  display: block;
+  /* height: 2px; */
+  height: .2rem;
+  background: white;
+  /* width: 30px; */
+  width: 2.5rem;
+  /* left: 10px; */
+  /* left: 1rem; */
+  transition: all .3s;
+}
+.toggle-menu i:nth-child(1) {
+  top: 1.6rem;
+}
+.toggle-menu i:nth-child(2) {
+  top: 2.4rem;
+}
+.toggle-menu i:nth-child(3) {
+  top: 3.2rem;
+}
+.open-menu i:nth-child(1) {
+  top: 2.5rem;
+  -webkit-transform: rotateZ(45deg);
+          transform: rotateZ(45deg);
+}
+.open-menu i:nth-child(2) {
+  background: transparent;
+}
+.open-menu i:nth-child(3) {
+  top: 2.5rem;
+  -webkit-transform: rotateZ(-45deg);
+          transform: rotateZ(-45deg);
+}
+nav {
+  height: 0;
+  opacity: 0;
+  box-sizing: border-box;
+  /* background-color: var(--secondary-blue); */
+  background-color: var(--primary-blue);
+  position: fixed;
+  top: 7rem;
+  width: 100%;
+    transition: all 1s;
+}
+.open-menu ~ nav {
+  opacity: 1;
+  padding: 5rem 0;
+  z-index: 15;
+  height: 15vh;
+}
+nav ul {
+  display: flex;
+}
+nav li {
+  flex: 1 30px;
+}
+
+nav ul {
+  padding: 0;
+}
+
+/* nav bar buttons */
+nav li a {
+  font-size: 1.3rem;
+  display: block;
+  padding: 1rem 0;
+  align-items: center;
+  text-align: center;
+  transition: background .3s;
+  background: var(--secondary-blue);
+  margin: 0 .3rem;
+  color: black;
+  font-weight: bold;
+}
+nav li a:first-child {
+  margin-left: 1rem;
+}
+
+nav li a:last-child {
+  margin-right: 1rem;
+}
+nav li a:hover {
+  background: var(--primary-yellow);
+  color: inherit;
+}
+
+/* .fas {
+  color: var(--primary-red);
+}
+
+.fas:hover {
+  color: var(--primary-red-statechange);
+} */
+
+/* Section CSS */
+section {
+  text-align: center;
+}
+
+h2 {
+  font-size: 3em;
+}
+
+h3 {
+  font-weight: normal;
+  font-size: 1.7em;
+}
+
+#homePageImg {
+  transform: translateY(-50px);
+  text-align: left;
+  width: 100vw;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url(./imgs/Rochester-MN.jpg);
+  height: 40rem;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#fp-nav ul li a span, 
+.fp-slidesNav ul li a span {
+  background: var(--primary-blue);
+  width: 8px;
+  height: 8px;
+  margin: -4px 0 0 -4px;
+}
+#fp-nav ul li a.active span, 
+.fp-slidesNav ul li a.active span, 
+#fp-nav ul li:hover a.active span, 
+.fp-slidesNav ul li:hover a.active span {
+  width: 16px;
+  height: 16px;
+  margin: -8px 0 0 -8px;
+  background: transparent;
+  box-sizing: border-box;
+  /* border: 2px solid var(--dark-grey); */
+  border: 2px solid var(--primary-yellow-statechange);
+}
+
+/* Inner Section CSS */
+.container-year {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+.pgHeader {
+  margin-bottom: 7em;
+}
+
+.pgHeader > h2 {
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.pgHeader > p {
+  font-size: small;
+  font-weight: normal;
+}
+
+.fa-building {
+  color: var(--secondary-blue);
+}
+
+.fa-hospital-alt {
+  color: var(--primary-red);
+}
+
+.yearHeaders {
+  grid-column: 2 /span 4;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  text-align: left;
+}
+.yearHeaders > div {
+  font-weight: bold;
+  font-size: large;
+  position: relative;
+  transform-origin: 0 0;
+  transform: rotate(-45deg)
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+.grid-child.branding-name {
+  width: 80%;
+  grid-column: 1 / span 1;
+  padding: 0.75rem 0rem 0.75rem 0.75rem;
+}
+
+.grid-child.line-points {
+  grid-column: 2 / span 4;
+}
+.timeline2 {
+  display: grid;
+  grid-template-columns: repeat(31, 1fr);
+  align-items: center;
+  height: 100%;
+}
+
+/* Create the line */
+.timeline2 > div {
+  height: 2rem;
+  /* height: .1rem; */
+  text-align: justify;
+  /* background: var(--primary-blue-rgba); */
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 45%, var(--primary-blue-rgba) 51%, rgba(255,255,255,0) 57%, rgba(255,255,255,0) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,0)), color-stop(45%, rgba(255,255,255,0)), color-stop(51%, rgb(16, 22, 127,1)), color-stop(57%, rgba(255,255,255,0)), color-stop(100%, rgba(255,255,255,0)));
+  /* background: linear-gradient(to bottom, black 0%, black 45%, var(--primary-yellow) 51%, black 57%, black 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, black), color-stop(45%, black), color-stop(51%, var(--primary-yellow)), color-stop(57%, black), color-stop(100%, black)); */
+  /* background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 45%, rgb(16, 22, 127,1) 51%, rgba(255,255,255,0) 57%, rgba(255,255,255,0) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,0)), color-stop(45%, rgba(255,255,255,0)), color-stop(51%, rgb(16, 22, 127,1)), color-stop(57%, rgba(255,255,255,0)), color-stop(100%, rgba(255,255,255,0))); */
+}
+.emt {
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 45%, rgba(0,0,0,0) 51%, rgba(0,0,0,0) 57%, rgba(255,255,255,0) 100%) !important;
+}
+/* A tag "dots" */
+.timeline2 a {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  background: var(--primary-yellow-statechange);
+  border-radius: 50%;
+}
+
+/* ToolTip */
+.tooltipManual {
+  position: relative;
+  display: inline-block;
+}
+
+/* Tooltip text */
+.tooltipManual .tooltipManual-text {
+  visibility: hidden;
+  background-color: var(--secondary-blue);
+  color: black;
+  text-align: center;
+  font-size: 1.2rem;
+  padding: .5rem 0;
+  border-radius: .6rem;
+  width: 30rem;
+  bottom: 100%;
+  left: 50%;
+  margin-left: calc(-30rem/2);
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltipManual:hover {
+  /* background-color: var(--primary-blue-statechange); */
+  background-color: var(--primary-red-statechange);
+}
+
+.tooltipManual .tooltipManual-text::after {
+  content: " ";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -.5rem;
+  border-width: .5rem;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+.tooltipManual:hover .tooltipManual-text {
+  visibility: visible;
+}
+
+/* Modal */
+
+.modalBtn {
+  color: black;
+  text-decoration: none;
+}
+
+.modalBtn:hover {
+  color: var(--primary-red);
+}
+
+.modal-content > * {
+  font-size: medium;
+  /* text-align: center;
+  justify-content: center; */
+}
+
+.modal-header h3 {
+  font-family: 'League-Gothic';
+}
+
+.modal-body a {
+  color: black;
+}
+
+.modal-body a:hover {
+  color: var(--primary-red);
+}
+
+.modal-body button {
+  background-color: var(--primary-blue);
+  color: white;
+}
+
+.modal-body button:hover {
+  background-color: var(--primary-blue-statechange);
+  color: white;
+}
+
+.fp-enabled .modal {
+  position: fixed !important;
+}
+
+#footer {
+  position: fixed;
+  height: 3rem;
+  display: block;
+  width: 100%;
+  background: var(--primary-blue);
+  z-index: 9;
+  text-align: center;
+  color: white;
+  padding: .5rem 0 0 0;
+  bottom: 0px;
+}  
+
+.footer-content > p {
+  display: inline;
+}
+
+#footer i {
+  color: white;
+}
+
+#footer i:hover {
+  color: var(--primary-yellow);
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav li {
+    margin-top: 1px;
+  }
+
+  nav li a {
+    font-size: 1.5em;
+  }
+
+  .scroll-icon {
+    display: none;
+ }
+
+ h1 {
+   font-size: 2rem;
+ }
+
+ h3 {
+   font-size: 16px;
+ }
+
+ .timeline2 > div{
+   height: 16px
+ }
+
+ .timeline2 a {
+   width: 14px;
+   height: 14px;
+ }
+}
+
+@media screen and (max-width: 400px) {
+  html {
+    font-size: 40%;
+  }
+
+  nav {
+    background-color: none;
+  }
+
+  .toggle-menu {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .open-menu ~ nav {
+    padding: 10px 0;
+  }
+  
+  nav li a {
+    padding: 20px;
+  }
+
+  .yearHeaders div {
+    font-size: small;
+  }
+
+  .pgHeader p {
+    font-size: small;
+  }
+
+  .branding-name h3 {
+    font-size: small;
+  }
+
+}
+
+/* Animations */
+@keyframes animatetop {
+  from {top: -300px; opacity: 0}
+  to {top: 0; opacity: 1}
+}
